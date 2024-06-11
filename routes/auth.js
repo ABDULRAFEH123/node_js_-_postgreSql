@@ -9,6 +9,7 @@ router.post('/verify-token', verifyToken, (req, res) => {
     const issuedAt = new Date(req.user.iat * 1000).toLocaleString();
     const expiresAt = new Date(req.user.exp * 1000).toLocaleString();
 
+    
     res.status(200).json({
         message: "Token is valid",
         user: req.user,
